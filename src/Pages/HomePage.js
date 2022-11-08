@@ -19,7 +19,7 @@ const HomePage = () => {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-               <CardContainer/>
+               <CardContainer />
             </Box>
         </>
     )
