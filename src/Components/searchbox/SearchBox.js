@@ -9,13 +9,16 @@ const SearchBox = ({ onChangeHandler }) => {
             <Box
                 component="form"
                 sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
+                    '& > :not(style)': { m: 1, width: '80%' },
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "white",
                 }}
                 noValidate
                 autoComplete="off"
                 margin="auto"
             >
-                <TextField id="outlined-basic" label="Search..." variant="outlined" onChange={onChangeHandler} />
+                <TextField sx={{borderColor: "white", textDecorationColor: "white"}} id="outlined-basic" label="Search..." variant="outlined" onChange={onChangeHandler}/>
             </Box>
         </div>
     )

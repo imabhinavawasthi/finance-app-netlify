@@ -1,27 +1,47 @@
 import * as React from 'react';
 import { Box } from "@mui/system";
-import Paper from '@mui/material/Paper';
 import Typography from "@mui/material/Typography";
+import { Button } from '@mui/material';
+import Chip from '@mui/material/Chip';
 
-const Card = () => {
+const Card = ({ ele }) => {
     return (
         <>
-            <Paper square={true}
-                sx={{
-                    mt: 2,
-                    maxWidth: 782,
-                    height: 76,
-                    flexGrow: 1,
-                    backgroundColor: '#ffffff',
-                    boxShadow: 0,
-                    borderRadius: 3,
-                    pb: 0,
-                    border: 1,
-                    borderColor: '#e5e5e5',
+            <Box display="flex" flexDirection="column" p={1} m={1} justifyContent="center" alignItems="center">
+                <Box m={1} component="img" sx={{
+                    height: 30,
+                    width: 70,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    borderRadius: 1,
                 }}
-            >
-
-            </Paper>
+                    alt="image"
+                    src={ele.imageUrl}>
+                </Box>
+                <Box m={1}>
+                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="body1" color="black">
+                        {ele.name}
+                    </Typography>
+                </Box>
+                <Box m={1}>
+                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="caption" color="black">
+                        Industry: <Chip style={{size:'1em'}} label={ele.industry} variant="outlined" />
+                    </Typography>
+                </Box>
+                <Box m={1}>
+                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="caption" color="black">
+                        Sector: <Chip style={{size:'1em'}} label={ele.sector} variant="outlined" />
+                    </Typography>
+                </Box>
+                <Box m={1}>
+                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="h5" color="black">
+                        {ele.revenue}
+                    </Typography>
+                </Box>
+                <Box m={1}>
+                    <Button variant="contained">Learn more</Button>
+                </Box>
+            </Box>
         </>
     )
 }
