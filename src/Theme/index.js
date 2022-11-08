@@ -4,21 +4,10 @@ const theme = createTheme({
     palette: {
         type: 'light',
         primary: {
-          main: '#CFECEC',
-          light: '#B9FFF8',
+          main: '#3f51b5',
         },
         secondary: {
-          main: '#F55C47',
-        },
-        background: {
-          default: '#000000',
-          paper: '#195056',
-        },
-        text: {
-          primary: '#F1F1F1',
-          secondary: '#EEEEEE',
-          disabled: 'rgba(187,180,180,0.38)',
-          hint: 'rgba(177,169,169,0.38)',
+          main: '#f50057',
         },
       },
       typography: {
