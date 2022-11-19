@@ -13,12 +13,14 @@ const SearchBox = ({ onChangeHandler }) => {
                     alignItems: "center",
                     justifyContent: "center",
                     color: "white",
+                    border: 0,
+                    borderColor: "white"
                 }}
                 noValidate
                 autoComplete="off"
                 margin="auto"
             >
-                <TextField sx={{borderColor: "white", textDecorationColor: "white"}} id="outlined-basic" label="Search..." variant="outlined" onChange={onChangeHandler}/>
+                <TextField sx={{borderRadius: 1, borderColor: "white", textDecorationColor: "white", backgroundColor: "white", border: 0}} label="Search any company..." variant="outlined" onChange={onChangeHandler}/>
             </Box>
         </div>
     )
