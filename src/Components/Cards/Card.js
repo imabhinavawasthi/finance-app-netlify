@@ -1,45 +1,50 @@
-import * as React from 'react';
+import React from 'react';
 import { Box } from "@mui/system";
 import Typography from "@mui/material/Typography";
 import { Button } from '@mui/material';
 import Chip from '@mui/material/Chip';
+import Divider from '@mui/material/Divider';
 
-const Card = ({ ele }) => {
+const Card = ({ name, url, sector, industry, revenue }) => {
+
     return (
         <>
             <Box display="flex" flexDirection="column" p={1} m={1} justifyContent="center" alignItems="center">
-                <Box m={1} component="img" sx={{
-                    height: 30,
-                    width: 70,
+                <Box m={1} mt={2} component="img" sx={{
+                    height: 65,
+                    width: 80,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     borderRadius: 1,
+                    display: "flex",
                 }}
                     alt="image"
-                    src={ele.imageUrl}>
+                    src={url}>
                 </Box>
                 <Box m={1}>
-                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="body1" color="black">
-                        {ele.name}
+                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "700", fontSize: "19px" }} variant="body1" color="black">
+                        {name}
                     </Typography>
                 </Box>
                 <Box m={1}>
                     <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="caption" color="black">
-                        Industry: <Chip style={{size:'1em'}} label={ele.industry} variant="outlined" />
+                        Industry: <Chip style={{ size: '1em' }} label={industry} variant="outlined" color="primary" sx={{color: "#a371f7", borderColor: "#a371f7", boxShadow: 3}} />
                     </Typography>
                 </Box>
                 <Box m={1}>
                     <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="caption" color="black">
-                        Sector: <Chip style={{size:'1em'}} label={ele.sector} variant="outlined" />
+                        Sector: <Chip style={{ size: '1em' }} label={sector} color="primary" variant="outlined" sx={{color: "#a371f7",borderColor: "#a371f7", boxShadow: 2}}/>
                     </Typography>
                 </Box>
                 <Box m={1}>
-                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="h5" color="black">
-                        {ele.revenue}
+                    <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="h6" color="black">
+                        Revenue: {(revenue / 100000000).toFixed(2)} billion $ 
                     </Typography>
                 </Box>
+                <Divider sx={{ width: "100%", marginBottom: "20px", color: "black" }} />
                 <Box m={1}>
-                    <Button variant="contained">Learn more</Button>
+
+                    <Button variant="contained" sx={{backgroundColor: "#42C2FF"}}>Learn more</Button>
                 </Box>
             </Box>
         </>

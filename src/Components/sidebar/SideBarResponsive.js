@@ -14,6 +14,13 @@ import Toolbar from '@mui/material/Toolbar';
 import SearchBox from '../searchbox/SearchBox';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Typography } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import Img from '../assests/lololo.png'
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import Person3Icon from '@mui/icons-material/Person3';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 const drawerWidth = 240;
 
@@ -28,25 +35,49 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Toolbar />
-      <Divider />
+      <Toolbar />
+      <Toolbar />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem sx={{ color: "white" }}>
+          <ListItemButton>
+            <DashboardIcon/>
+            <Typography ml={2} variant="h6" noWrap component="div" >
+              Dashboard
+            </Typography>
+          </ListItemButton>
+        </ListItem>
+        <ListItem sx={{ color: "white" }}>
+          <ListItemButton>
+            <BookmarkAddIcon/>
+            <Typography ml={2} variant="h6" noWrap component="div" >
+              Add Shares
+            </Typography>
+          </ListItemButton>
+        </ListItem>
+        <ListItem sx={{ color: "white" }}>
+          <ListItemButton>
+            <NewspaperIcon/>
+            <Typography ml={2} variant="h6" noWrap component="div" >
+              Read News
+            </Typography>
+          </ListItemButton>
+        </ListItem>
+        <ListItem sx={{ color: "white" }}>
+          <ListItemButton>
+            <Person3Icon/>
+            <Typography ml={2} variant="h6" noWrap component="div" >
+              Profile
+            </Typography>
+          </ListItemButton>
+        </ListItem>
+        <ListItem sx={{ color: "white" }}>
+          <ListItemButton>
+            <ExitToAppIcon/>
+            <Typography ml={2} variant="h6" noWrap component="div" >
+              Logout
+            </Typography>
+          </ListItemButton>
+        </ListItem>
       </List>
     </div>
   );
@@ -54,7 +85,7 @@ function ResponsiveDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }} alignItems="center" justifyContent="center">
+    <Box sx={{ display: 'flex', backgroundColor: "#B9FFF8" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -62,11 +93,14 @@ function ResponsiveDrawer(props) {
         alignItems="center"
         justifyContent="center"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          // width: { sm: `calc(100% - ${drawerWidth}px)` },
+          // ml: { sm: `${drawerWidth}px` },
+          color: "#000000",
+          backgroundColor: "#42C2FF",
+          zIndex: 1500
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+        <Toolbar sx={{ justifyContent: "space-between", zIndex: 1500 }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -76,15 +110,30 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
+          <Box m={1} component="img" sx={{
+            height: 140,
+            width: 300,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            borderRadius: 1,
+            display: "flex",
+            mr: {
+              xs: 0,
+            },
+            m: {
+              xs: 0
+,            }
+          }}
+            alt="image"
+            src={Img}>
+          </Box>
+          {/* <Typography variant="h6" noWrap component="div" >
+
+            FINANCE PEARLY GATES
+          </Typography> */}
           <Typography variant="h6" noWrap component="div" width="70%">
-            <SearchBox onChangeHandler={props.onChangeHandler}/>
+            <SearchBox onChangeHandler={props.onChangeHandler} />
           </Typography>
-          <Button>
-            hello
-          </Button>
         </Toolbar>
       </AppBar>
       <Box
@@ -93,7 +142,12 @@ function ResponsiveDrawer(props) {
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
+        <Drawer mb={5}
+          PaperProps={{
+            sx: {
+              backgroundColor: "#42C2FF",
+            }
+          }}
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -104,15 +158,22 @@ function ResponsiveDrawer(props) {
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            backgroundColor: "#42C2FF"
           }}
         >
           {drawer}
         </Drawer>
         <Drawer
+          PaperProps={{
+            sx: {
+              backgroundColor: "#42C2FF",
+            }
+          }}
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            backgroundColor: "#42C2FF"
           }}
           open
         >
