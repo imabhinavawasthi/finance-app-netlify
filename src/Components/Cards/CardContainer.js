@@ -18,11 +18,11 @@ const CardContainer = ({array}) => {
                                 sx={{
                                     height: 380,
                                     width: 350,
-                                    backgroundColor: "#EFFFFD"
+                                    backgroundColor: "#F8F8F8"
                                 }}
                                 alignItems="center"
                             >
-                                <Card name={company.ShortName} sector={company.Sector} industry={company.Industry} revenue={company.Revenue} url={company.ImageUrl}/>
+                                <Card name={company.ShortName} sector={company.Sector} industry={company.Industry} revenue={company.Revenue} url={company.ImageUrl} symbol={company.Symbol}/>
                             </Paper>
                         </Grid>
                     ))}
