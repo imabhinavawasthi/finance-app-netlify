@@ -4,8 +4,9 @@ import Typography from "@mui/material/Typography";
 import { Button } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
+import { NavLink } from 'react-router-dom'
 
-const Card = ({ name, url, sector, industry, revenue }) => {
+const Card = ({ name, url, sector, industry, revenue, symbol }) => {
 
     return (
         <>
@@ -28,23 +29,24 @@ const Card = ({ name, url, sector, industry, revenue }) => {
                 </Box>
                 <Box m={1}>
                     <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="caption" color="black">
-                        Industry: <Chip style={{ size: '1em' }} label={industry} variant="outlined" color="primary" sx={{color: "#a371f7", borderColor: "#a371f7", boxShadow: 3}} />
+                        Industry: <Chip style={{ size: '1em' }} label={industry} variant="outlined" color="primary" sx={{ color: "#00cc00", borderColor: "#00cc00", boxShadow: 3 }} />
                     </Typography>
                 </Box>
                 <Box m={1}>
                     <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="caption" color="black">
-                        Sector: <Chip style={{ size: '1em' }} label={sector} color="primary" variant="outlined" sx={{color: "#a371f7",borderColor: "#a371f7", boxShadow: 2}}/>
+                        Sector: <Chip style={{ size: '1em' }} label={sector} color="primary" variant="outlined" sx={{ color: "#00cc00", borderColor: "#00cc00", boxShadow: 2 }} />
                     </Typography>
                 </Box>
                 <Box m={1}>
                     <Typography sx={{ ml: 2, mr: 0.5, fontWeight: "500" }} variant="h6" color="black">
-                        Revenue: {(revenue / 100000000).toFixed(2)} billion $ 
+                        Revenue: {(revenue / 100000000).toFixed(2)} billion $
                     </Typography>
                 </Box>
                 <Divider sx={{ width: "100%", marginBottom: "20px", color: "black" }} />
                 <Box m={1}>
-
-                    <Button variant="contained" sx={{backgroundColor: "#42C2FF"}}>Learn more</Button>
+                    <NavLink to={`/company/${symbol}`} style={{textDecoration: 'none'}}>
+                        <Button variant="contained" sx={{ backgroundColor: "#000000", "&:hover": { backgroundColor: "#484848" } }}>Learn more</Button>
+                    </NavLink>
                 </Box>
             </Box>
         </>

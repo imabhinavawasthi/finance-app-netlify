@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ResponsiveDrawer from '../Components/sidebar/SideBarResponsive'
 import { Box } from "@mui/system";
-import CardContainer from '../Components/Cards/CardContainer';
 import data from '../Components/data.json'
+import { Outlet } from 'react-router-dom';
 
 const HomePage = () => {
 
@@ -44,7 +44,7 @@ const HomePage = () => {
                     mt: { xs: `${topHeight + 50}px`, sm: `${topHeight+50}px` },
                 }}
             >
-                <CardContainer array={filteredData} />
+                <Outlet context={[filteredData]}/>
             </Box>
         </>
     )

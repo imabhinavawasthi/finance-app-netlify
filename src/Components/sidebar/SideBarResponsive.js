@@ -1,26 +1,62 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import SearchBox from '../searchbox/SearchBox';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Typography } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
-import Img from '../assests/lololo.png'
+import Img from '../assests/Finance Pearly Gates-logo-black.png'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import Person3Icon from '@mui/icons-material/Person3';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { NavLink, useMatch, useParams } from 'react-router-dom';
+
+const iconarr = [
+  <DashboardIcon sx={{ mr: 1 }} />,
+  <BookmarkAddIcon sx={{ mr: 1 }} />,
+  <NewspaperIcon sx={{ mr: 1 }} />,
+  <Person3Icon sx={{ mr: 1 }} />,
+  <ExitToAppIcon sx={{ mr: 1 }} />
+]
+
+const menuitems = [
+  {
+    id: 1,
+    name: "Dashboard"
+  },
+  {
+    id: 2,
+    name: "Add Shares"
+  },
+  {
+    id: 3,
+    name: "Read News"
+  },
+  {
+    id: 4,
+    name: "Profile"
+  },
+  {
+    id: 5,
+    name: "Logout"
+  }
+]
+
+const routes = [
+  "/dashboard",
+  "/addShares",
+  "/news",
+  "/user/portfolio",
+  "/login"
+]
 
 const drawerWidth = 240;
 
@@ -32,52 +68,40 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const [currentTab, setCurrentTab] = useState(1);
+
+  const active = "contained"
+
+  const params= useParams();
+
+  const ok1 = useMatch({ path: "/dashboard", end: true })
+  const ok2 = useMatch({ path: "/", end: true })
+  const ok3 = useMatch({ path: `/company/${params.symbol}`, end: true })
+
   const drawer = (
     <div>
       <Toolbar />
       <Toolbar />
       <Toolbar />
-      <List>
-        <ListItem sx={{ color: "white" }}>
-          <ListItemButton>
-            <DashboardIcon/>
-            <Typography ml={2} variant="h6" noWrap component="div" >
-              Dashboard
-            </Typography>
-          </ListItemButton>
-        </ListItem>
-        <ListItem sx={{ color: "white" }}>
-          <ListItemButton>
-            <BookmarkAddIcon/>
-            <Typography ml={2} variant="h6" noWrap component="div" >
-              Add Shares
-            </Typography>
-          </ListItemButton>
-        </ListItem>
-        <ListItem sx={{ color: "white" }}>
-          <ListItemButton>
-            <NewspaperIcon/>
-            <Typography ml={2} variant="h6" noWrap component="div" >
-              Read News
-            </Typography>
-          </ListItemButton>
-        </ListItem>
-        <ListItem sx={{ color: "white" }}>
-          <ListItemButton>
-            <Person3Icon/>
-            <Typography ml={2} variant="h6" noWrap component="div" >
-              Profile
-            </Typography>
-          </ListItemButton>
-        </ListItem>
-        <ListItem sx={{ color: "white" }}>
-          <ListItemButton>
-            <ExitToAppIcon/>
-            <Typography ml={2} variant="h6" noWrap component="div" >
-              Logout
-            </Typography>
-          </ListItemButton>
-        </ListItem>
+      <List sx={{ textAlign: "center" }}>
+        {(menuitems).map((item) => {
+          return (
+            <NavLink to={`${routes[(item.id) - 1]}`} style={{ textDecoration: 'none', color: "black" }}>
+              <ListItem>
+                <Button key={item.id} sx={{
+                  height: 50, width: "100%",
+                  backgroundColor: currentTab === item.id ? "black" : "", "&:hover": {
+                    backgroundColor: currentTab === item.id ? "black" : ""
+                  }
+                }} variant={currentTab === item.id ? active : ""}
+                  onClick={() => setCurrentTab(item.id)}>
+                  {iconarr[item.id - 1]}
+                  {item.name}
+                </Button>
+              </ListItem>
+            </NavLink>
+          )
+        })}
       </List>
     </div>
   );
@@ -96,7 +120,7 @@ function ResponsiveDrawer(props) {
           // width: { sm: `calc(100% - ${drawerWidth}px)` },
           // ml: { sm: `${drawerWidth}px` },
           color: "#000000",
-          backgroundColor: "#42C2FF",
+          backgroundColor: "#E8E8E8",
           zIndex: 1500
         }}
       >
@@ -122,7 +146,8 @@ function ResponsiveDrawer(props) {
             },
             m: {
               xs: 0
-,            }
+              ,
+            }
           }}
             alt="image"
             src={Img}>
@@ -132,7 +157,9 @@ function ResponsiveDrawer(props) {
             FINANCE PEARLY GATES
           </Typography> */}
           <Typography variant="h6" noWrap component="div" width="70%">
-            <SearchBox onChangeHandler={props.onChangeHandler} />
+            {ok1 || ok2 ? <SearchBox onChangeHandler={props.onChangeHandler} />: ''}
+            {ok3 ? params.id : ''}
+            {/* <SearchBox onChangeHandler={props.onChangeHandler} /> */}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -166,7 +193,7 @@ function ResponsiveDrawer(props) {
         <Drawer
           PaperProps={{
             sx: {
-              backgroundColor: "#42C2FF",
+              backgroundColor: "	#E0E0E0",
             }
           }}
           variant="permanent"
