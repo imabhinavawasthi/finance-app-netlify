@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 // import pic from "../assets/Financial-Services-Under-GST.jpg";
-import pic from "../assets/fimage.webp";
+import pic from "../photos/fimage.webp";
 
 const Login = () => {
   const [data, setData] = useState({ companyName: "", noOfShare: "" });

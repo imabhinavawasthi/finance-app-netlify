@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-import pic from "../assets/Rectangle 38.svg";
+import pic from "../photos/Rectangle 38.svg";
 
 const Login = () => {
   const [data, setData] = useState({ email: "", password: "" });
