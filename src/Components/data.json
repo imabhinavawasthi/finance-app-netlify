@@ -2738,7 +2738,8 @@
         "LastSplitDate": "2017-06-22T00:00:00",
         "EDBITDA": 1.54779E+11,
         "Open": 4.92,
-        "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/2560px-Wipro_Primary_Logo_Color_RGB.svg.png"
+        "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/2560px-Wipro_Primary_Logo_Color_RGB.svg.png",
+        "des": "Wipro Limited  is a leading technology services and consulting company focused on building innovative solutions that address clients’ most complex digital transformation needs."
     },
     {
         "Symbol": "NOK",
@@ -2813,7 +2814,8 @@
         "LastSplitDate": "2000-04-11T00:00:00",
         "EDBITDA": 2.992E+09,
         "Open": 4.64,
-        "ImageUrl": "https://www.nokia.com/sites/default/files/styles/scale_1920_no_crop/public/2022-03/NOKIA_LOGO_RGB_HR.jpg"
+        "ImageUrl": "https://www.nokia.com/sites/default/files/styles/scale_1920_no_crop/public/2022-03/NOKIA_LOGO_RGB_HR.jpg",
+        "des": "Nokia Corp (Nokia) is a communications and information technology company that operates in the areas of network infrastructure and advanced technologies. It offers fixed networks, mobile phones, WiFi systems, IP routing, subscriber data management, network implementation, network modernization, IoT, and 5G services."
     },
     {
         "Symbol": "EBAY",
@@ -2888,7 +2890,8 @@
         "LastSplitDate": "2015-07-20T00:00:00",
         "EDBITDA": 2.932E+09,
         "Open": 44.66,
-        "ImageUrl": "https://logos-world.net/wp-content/uploads/2020/11/eBay-Emblem.png"
+        "ImageUrl": "https://logos-world.net/wp-content/uploads/2020/11/eBay-Emblem.png",
+        "des": "eBay Inc. is an American multinational e-commerce company based in San Jose, California, that facilitates consumer-to-consumer and business-to-consumer sales through its website. The company manages the eBay website, an online auction and shopping website in which people and businesses buy and sell a wide variety of goods and services worldwide. The website is free to use for buyers, but sellers are charged fees for listing items after a limited number of free listings, and an additional or separate fee when those items are sold."
     },
     {
         "Symbol": "MSFT",
@@ -2966,7 +2969,8 @@
         "LastSplitDate": "2003-02-18T00:00:00",
         "EDBITDA": 9.8841E+10,
         "Open": 237.78,
-        "ImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9UYrMGx-0SAgfv17dxsuV5eeKs-ePFDdjKw&usqp=CAU"
+        "ImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9UYrMGx-0SAgfv17dxsuV5eeKs-ePFDdjKw&usqp=CAU",
+        "des": "Microsoft Corporation is an American multinational technology corporation producing computer software, consumer electronics, personal computers, and related services headquartered at the Microsoft Redmond campus located in Redmond, Washington, United States. Its best-known software products are the Windows line of operating systems, the Microsoft Office suite, and the Internet Explorer and Edge web browsers. Its flagship hardware products are the Xbox video game consoles and the Microsoft Surface lineup of touchscreen personal computers."
     },
     {
         "Symbol": "GOOGL",
@@ -3037,7 +3041,8 @@
         "LastSplitDate": "2022-07-18T00:00:00",
         "EDBITDA": 9.3733E+10,
         "Open": 96.97,
-        "ImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt8y-nzomAzGCDERSC4ghRVC1TFKbbyP7OyA&usqp=CAU"
+        "ImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt8y-nzomAzGCDERSC4ghRVC1TFKbbyP7OyA&usqp=CAU",
+        "des": "Google LLC is an American multinational technology company focusing on search engine technology, online advertising, cloud computing, computer software, quantum computing, e-commerce, artificial intelligence, and consumer electronics. It has been referred to as the most powerful company in the world and one of the world's most valuable brands due to its market dominance, data collection, and technological advantages in the area of artificial intelligence."
     },
     {
         "Symbol": "AMZN",
@@ -3108,6 +3113,7 @@
         "LastSplitDate": "2022-06-06T00:00:00",
         "EDBITDA": 5.1549E+10,
         "Open": 95.37,
-        "ImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXEuOnxePm1cxbS8MeKi56wAJvQIZiOKukcA&usqp=CAU"
+        "ImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXEuOnxePm1cxbS8MeKi56wAJvQIZiOKukcA&usqp=CAU",
+        "des": "Amazon.com, Inc. is an American multinational technology company focusing on e-commerce, cloud computing, online advertising, digital streaming, and artificial intelligence. It has been referred to as one of the most influential economic and cultural forces in the world, and is one of the world's most valuable brands."
     }
 ]

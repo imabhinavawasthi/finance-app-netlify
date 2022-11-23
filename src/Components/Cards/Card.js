@@ -44,7 +44,7 @@ const Card = ({ name, url, sector, industry, revenue, symbol }) => {
                 </Box>
                 <Divider sx={{ width: "100%", marginBottom: "20px", color: "black" }} />
                 <Box m={1}>
-                    <NavLink to={`/company/${symbol}`} style={{textDecoration: 'none'}}>
+                    <NavLink to={`/company/${name}/${symbol}`} style={{textDecoration: 'none'}}>
                         <Button variant="contained" sx={{ backgroundColor: "#000000", "&:hover": { backgroundColor: "#484848" } }}>Learn more</Button>
                     </NavLink>
                 </Box>

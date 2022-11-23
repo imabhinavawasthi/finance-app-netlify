@@ -158,7 +158,7 @@ function ResponsiveDrawer(props) {
           </Typography> */}
           <Typography variant="h6" noWrap component="div" width="70%">
             {ok1 || ok2 ? <SearchBox onChangeHandler={props.onChangeHandler} />: ''}
-            {ok3 ? params.id : ''}
+            {ok3 ? params.name : ''}
             {/* <SearchBox onChangeHandler={props.onChangeHandler} /> */}
           </Typography>
         </Toolbar>
